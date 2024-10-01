@@ -33,6 +33,6 @@ nosetests.xml
 coverage.xml
 .pytest_cache
 
-# Flipper Nested files
-*.nonces
+# Nested log files, recovered keys
+.nested.log
 *.keys
