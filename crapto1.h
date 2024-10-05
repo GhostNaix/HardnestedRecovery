@@ -32,8 +32,6 @@ uint8_t crypto1_byte(struct Crypto1State *, uint8_t, int);
 uint32_t crypto1_word(struct Crypto1State *, uint32_t, int);
 uint32_t prng_successor(uint32_t x, uint32_t n);
 
-struct Crypto1State *lfsr_recovery32(uint32_t ks2, uint32_t in);
-struct Crypto1State *lfsr_recovery64(uint32_t ks2, uint32_t ks3);
 struct Crypto1State *
 lfsr_common_prefix(uint32_t pfx, uint32_t rr, uint8_t ks[8], uint8_t par[8][8], uint32_t no_par);
 uint32_t *lfsr_prefix_ks(const uint8_t ks[8], int isodd);
