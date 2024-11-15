@@ -3,12 +3,21 @@
 Program recovers keys from collected authorization challenges (nonces).
 You can collect nonces on Flipper Zero with the NFC app using [PR 3822](https://github.com/flipperdevices/flipperzero-firmware/pull/3822)
 
+## Setup
+
+First, install dependencies (Ubuntu):
+
+`sudo apt update;sudo apt install -y build-essential liblzma-dev`
+
+Then compile the program:
+
+`make`
+
 ## Usage
 
 Using qFlipper or the Flipper Mobile App, download the nonces stored at (/ext/)nfc/.nested.log. Then recover the keys by running the program with the path to .nested.log on your computer:
 
 ```bash
-$ make
 $ ./hardnested_main .nested.log
 ```
 
