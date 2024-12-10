@@ -24,14 +24,14 @@ mkdir "Compiled"
 # Build 64bit - Linux
 echo "Building 64Bit Linux binary"
 #export CC="gcc -O3 -static"
+make clean
 make -j$((`nproc`+1)) CC="gcc -O3 -static"
 strip -s "hardnested_main"
-unset CC
 echo "Renaming file hardnested_main > hardnested_linux_64bit"
 mv "hardnested_main" "hardnested_linux_64bit"
 echo "Compressing for distribution..."
 zip -9 "Compiled/hardnested_linux_64bit.zip" "hardnested_linux_64bit"
-tar -cfJv "Compiled/hardnested_linux_64bit.tar.xz" "hardnested_linux_64bit"
+tar -vcJf "Compiled/hardnested_linux_64bit.tar.xz" "hardnested_linux_64bit"
 tar -czvf "Compiled/hardnested_linux_64bit.tar.gz" "hardnested_linux_64bit"
 7z a -bt -t7z "Compiled/hardnested_linux_64bit.7z" "hardnested_linux_64bit" -m0=lzma2:d3840m:fb273 -mx9 -ms=on
 
